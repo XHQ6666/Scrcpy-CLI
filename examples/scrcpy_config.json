@@ -1,0 +1,11 @@
+{
+  "selected": "default",
+  "default": {
+    "display_mirror": "-m 720 -b 2M --max-fps=30",
+    "camera_mirror": "--camera-size=640x480 --camera-fps=10"
+  },
+  "high_quality": {
+    "display_mirror": "-m 1080 -b 4M --max-fps=60",
+    "camera_mirror": "--camera-size=960x720 --camera-fps=30"
+  }
+}

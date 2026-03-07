@@ -1,8 +1,8 @@
-# Scrcpy Launcher
+# Scrcpy CLI Launcher
 
 English | [简体中文](./README_zh-CN.md)
 
-A simple **cross-platform scrcpy launcher** for **Windows**, **macOS**, and **Linux**.
+A cross-platform CLI launcher for scrcpy with device selection, profiles, and quick access to common mirror modes.
 
 This project provides an interactive menu-based wrapper around `scrcpy` and `adb`, making it easier to:
 
@@ -16,6 +16,10 @@ This project provides an interactive menu-based wrapper around `scrcpy` and `adb
 The original version was written as a Windows batch script, and equivalent shell versions were adapted for macOS and Linux.
 
 ---
+
+## Screenshot
+
+![Screenshot](./screenshots/Scrcpy-CLI.png)
 
 ## Features
 
@@ -198,15 +202,15 @@ Two JSON structures are supported.
 Run:
 
 ```bat
-Scrcpy_CLI_Windows.bat
+Scrcpy-CLI-Windows.bat
 ```
 
 ### macOS
 Make it executable and run:
 
 ```bash
-chmod +x Scrcpy_CLI_macOS.command
-./Scrcpy_CLI_macOS.command
+chmod +x Scrcpy-CLI-macOS.command
+./Scrcpy-CLI-macOS.command
 ```
 
 You can also double-click the `.command` file in Finder.
@@ -215,8 +219,8 @@ You can also double-click the `.command` file in Finder.
 Make it executable and run:
 
 ```bash
-chmod +x Scrcpy_CLI_Linux.sh
-./Scrcpy_CLI_Linux.sh
+chmod +x Scrcpy-CLI-Linux.sh
+./Scrcpy-CLI-Linux.sh
 ```
 
 ---
@@ -286,9 +290,9 @@ Example layout:
 
 ```text
 .
-├── Scrcpy_CLI_Windows.bat
-├── Scrcpy_CLI_macOS.command
-├── Scrcpy_CLI_Linux.sh
+├── Scrcpy-CLI-Windows.bat
+├── Scrcpy-CLI-Linux.sh
+├── Scrcpy-CLI-macOS.command
 ├── README.md
 ├── README_zh-CN.md
 └── LICENSE

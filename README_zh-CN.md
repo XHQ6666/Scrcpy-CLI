@@ -1,8 +1,8 @@
-# Scrcpy Launcher
+# Scrcpy CLI Launcher
 
 [English](./README.md) | 简体中文
 
-一个适用于 **Windows**、**macOS** 和 **Linux** 的 **跨平台 scrcpy 启动脚本**。
+一个跨平台的 Scrcpy CLI 启动器，具有设备选择、配置文件和快速访问常用镜像模式的功能。
 
 这个项目在 `scrcpy` 和 `adb` 之上提供了一个 **交互式菜单封装**，让以下操作更方便：
 
@@ -16,6 +16,10 @@
 原始版本基于 Windows 批处理脚本实现，随后补充了 macOS 和 Linux 的 Shell 版本。
 
 ---
+
+## 屏幕截图
+
+![屏幕截图](./screenshots/Scrcpy-CLI.png)
 
 ## 功能
 
@@ -198,15 +202,15 @@ C:\Users\你的用户名\scrcpy_config.json
 运行：
 
 ```bat
-Scrcpy_CLI_Windows.bat
+Scrcpy-CLI-Windows.bat
 ```
 
 ### macOS
 赋予执行权限后运行：
 
 ```bash
-chmod +x Scrcpy_CLI_macOS.command
-./Scrcpy_CLI_macOS.command
+chmod +x Scrcpy-CLI-macOS.command
+./Scrcpy-CLI-macOS.command
 ```
 
 也可以直接在 Finder 中双击 `.command` 文件运行。
@@ -215,8 +219,8 @@ chmod +x Scrcpy_CLI_macOS.command
 赋予执行权限后运行：
 
 ```bash
-chmod +x Scrcpy_CLI_Linux.sh
-./Scrcpy_CLI_Linux.sh
+chmod +x Scrcpy-CLI-Linux.sh
+./Scrcpy-CLI-Linux.sh
 ```
 
 ---
@@ -286,9 +290,9 @@ scrcpy ...
 
 ```text
 .
-├── Scrcpy_CLI_Windows.bat
-├── Scrcpy_CLI_macOS.command
-├── Scrcpy_CLI_Linux.sh
+├── Scrcpy-CLI-Windows.bat
+├── Scrcpy-CLI-Linux.sh
+├── Scrcpy-CLI-macOS.command
 ├── README.md
 ├── README_zh-CN.md
 └── LICENSE
