@@ -284,22 +284,6 @@ That said, `adb` and `scrcpy` still interact with connected Android devices, so 
 
 ---
 
-## Project Structure
-
-Example layout:
-
-```text
-.
-├── Scrcpy-CLI-Windows.bat
-├── Scrcpy-CLI-Linux.sh
-├── Scrcpy-CLI-macOS.command
-├── README.md
-├── README_zh-CN.md
-└── LICENSE
-```
-
----
-
 ## Notes
 
 - The Windows version uses **PowerShell** to parse JSON.

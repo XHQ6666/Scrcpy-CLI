@@ -284,22 +284,6 @@ scrcpy ...
 
 ---
 
-## 项目结构
-
-示例目录结构：
-
-```text
-.
-├── Scrcpy-CLI-Windows.bat
-├── Scrcpy-CLI-Linux.sh
-├── Scrcpy-CLI-macOS.command
-├── README.md
-├── README_zh-CN.md
-└── LICENSE
-```
-
----
-
 ## 补充说明
 
 - Windows 版本使用 **PowerShell** 解析 JSON。
