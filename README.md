@@ -1,0 +1,2 @@
+# Scrcpy-CLI
+Scrcpy CLI
