@@ -19,7 +19,7 @@ The original version was written as a Windows batch script, and equivalent shell
 
 ## Screenshot
 
-![Screenshot](./screenshots/Scrcpy-CLI.png)
+![Screenshot](./screenshots/Scrcpy-CLI_en-US.png)
 
 ## Features
 
@@ -35,11 +35,12 @@ Launches `scrcpy` with:
 
 Supports camera ID selection and display orientation handling.
 
-### Microphone audio
-Launches microphone-only audio forwarding with:
+### Microphone & Call audio
+Launches microphone or call audio forwarding with:
 
 ```bash
 --audio-source=mic --no-video
+--audio-source=voice-call --no-video
 ```
 
 ### Profile switching
