@@ -8,7 +8,7 @@ This project provides an interactive menu-based wrapper around `scrcpy` and `adb
 
 - mirror the Android screen
 - mirror the camera
-- capture microphone audio only
+- capture microphone & call audio
 - switch between predefined launch profiles
 - handle multiple connected devices
 - attempt reconnection for offline ADB devices
