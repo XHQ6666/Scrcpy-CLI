@@ -19,7 +19,7 @@
 
 ## 屏幕截图
 
-![屏幕截图](./screenshots/Scrcpy-CLI.png)
+![屏幕截图](./screenshots/Scrcpy-CLI_zh-CN.png)
 
 ## 功能
 
@@ -27,7 +27,7 @@
 为选中的设备启动标准的 `scrcpy` 屏幕投屏。
 
 ### 相机镜像
-以以下参数启动 `scrcpy`：
+使用以下参数启动 `scrcpy`：
 
 ```bash
 --video-source=camera
@@ -35,11 +35,12 @@
 
 支持摄像头 ID 选择，以及显示方向处理。
 
-### 麦克风音频
-使用以下参数启动 **仅音频** 模式：
+### 麦克风与通话音频
+使用以下参数启动 **麦克风或通话音频** 模式：
 
 ```bash
 --audio-source=mic --no-video
+--audio-source=voice-call --no-video
 ```
 
 ### 配置切换
