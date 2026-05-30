@@ -23,15 +23,19 @@ set menu=
 set choice=
 set selected=
 set cam=
+set call_choice=
+set call_audio_source=
 
 cls
+chcp 936 >nul
 echo [Scrcpy 投屏]
 echo.
 echo 1. 屏幕镜像
 echo 2. 相机镜像
 echo 3. 麦克风音频
-echo 4. 参数设置
-echo 5. 退出
+echo 4. 通话音频
+echo 5. 参数设置
+echo 6. 退出
 echo.
 set /p menu=请输入选项编号：
 
@@ -40,7 +44,7 @@ if "%menu%" lss "1" (
     pause
     goto main_menu
 )
-if "%menu%" gtr "5" (
+if "%menu%" gtr "6" (
     echo 输入无效，请重新选择。
     pause
     goto main_menu
@@ -49,8 +53,9 @@ if "%menu%" gtr "5" (
 if "%menu%"=="1" set title=[屏幕镜像]
 if "%menu%"=="2" set title=[相机镜像]
 if "%menu%"=="3" set title=[麦克风音频]
-if "%menu%"=="4" set title=[参数设置] & goto selected_config
-if "%menu%"=="5" exit /b
+if "%menu%"=="4" set title=[通话音频]
+if "%menu%"=="5" set title=[参数设置] & goto selected_config
+if "%menu%"=="6" exit /b
 
 cls
 echo %title%
@@ -115,6 +120,7 @@ if /i "%selected_status%"=="offline" (
 if "%menu%"=="1" goto display_mirror
 if "%menu%"=="2" goto cam_mirror
 if "%menu%"=="3" goto mic_audio
+if "%menu%"=="4" goto call_audio
 
 :display_mirror
 cls
@@ -136,6 +142,28 @@ goto main_menu
 cls
 echo %title%
 scrcpy -s %selected% --audio-source=mic --no-video
+goto main_menu
+
+:call_audio
+cls
+echo %title%
+echo.
+echo 1. 双方音频
+echo 2. 本机音频
+echo 3. 对方音频
+echo.
+set /p call_choice=请输入选项编号（回车默认双方音频，输入 b 返回）：
+if /i "%call_choice%"=="b" goto main_menu
+if "%call_choice%"=="" set "call_audio_source=voice-call"
+if "%call_choice%"=="1" set "call_audio_source=voice-call"
+if "%call_choice%"=="2" set "call_audio_source=voice-call-downlink"
+if "%call_choice%"=="3" set "call_audio_source=voice-call-uplink"
+if not defined call_audio_source (
+    echo 输入无效，返回主菜单
+    pause
+    goto main_menu
+)
+scrcpy -s %selected% --audio-source=%call_audio_source% --no-video
 goto main_menu
 
 :selected_config

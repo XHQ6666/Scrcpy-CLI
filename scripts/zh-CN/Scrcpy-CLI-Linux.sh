@@ -248,6 +248,40 @@ mic_audio() {
     scrcpy -s "$selected" --audio-source=mic --no-video
 }
 
+call_audio() {
+    clear
+    echo "[通话音频]"
+    echo
+    echo "1. 双方音频"
+    echo "2. 本机音频"
+    echo "3. 对方音频"
+    echo
+
+    local choice audio_source
+    read -r -p "请输入选项编号（回车默认双方音频，输入 b 返回）：" choice
+    case "$choice" in
+        ""|1)
+            audio_source="voice-call"
+            ;;
+        2)
+            audio_source="voice-call-downlink"
+            ;;
+        3)
+            audio_source="voice-call-uplink"
+            ;;
+        b|B)
+            return 0
+            ;;
+        *)
+            echo "输入无效，返回主菜单"
+            action_pause
+            return 0
+            ;;
+    esac
+
+    scrcpy -s "$selected" --audio-source="$audio_source" --no-video
+}
+
 selected_config() {
     clear
     echo "[参数设置]"
@@ -299,8 +333,9 @@ main_menu() {
         echo "1. 屏幕镜像"
         echo "2. 相机镜像"
         echo "3. 麦克风音频"
-        echo "4. 参数设置"
-        echo "5. 退出"
+        echo "4. 通话音频"
+        echo "5. 参数设置"
+        echo "6. 退出"
         echo
 
         read -r -p "请输入选项编号：" menu
@@ -334,9 +369,18 @@ main_menu() {
                 fi
                 ;;
             4)
-                selected_config
+                clear
+                echo "[通话音频]"
+                echo "正在检测设备..."
+                echo
+                if choose_device; then
+                    call_audio
+                fi
                 ;;
             5)
+                selected_config
+                ;;
+            6)
                 exit 0
                 ;;
             *)
